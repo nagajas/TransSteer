@@ -1,0 +1,41 @@
+# Python cache
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Vectors and model outputs (large binary files)
+vectors/
+*.npy
+
+# Results
+results.json
+
+# Jupyter notebooks
+.ipynb_checkpoints/
+*.ipynb
+
+# Distribution / packaging
+dist/
+build/
+*.egg-info/
+*.egg
+
+# IDE
+.vscode/
+.idea/
+*.swp
+
+# macOS
+.DS_Store
+
+# Hugging Face cache (models can be multi-GB)
+.cache/
+
+# Logs
+*.log
