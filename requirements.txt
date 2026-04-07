@@ -1,0 +1,15 @@
+# TransSteer - Steering Vector Extraction Dependencies
+
+# Core ML libraries
+torch>=2.0.0
+transformers>=4.30.0
+numpy>=1.24.0
+
+# 4-bit quantization support
+bitsandbytes>=0.41.0
+
+# Steering vectors library
+steering-vectors>=0.1.0
+
+# Utilities
+tqdm>=4.65.0
