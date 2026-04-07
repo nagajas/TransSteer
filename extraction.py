@@ -222,18 +222,29 @@ def save_vectors(standard_vector, private_vector, output_dir: str):
         private_vector: Steering vector from private mean aggregation
         output_dir: Directory to save the vectors
     """
+    # Check if vectors are valid
+    if standard_vector is None and private_vector is None:
+        print("Warning: No vectors to save (both are None).")
+        return
+    
     # Create output directory if it doesn't exist
     os.makedirs(output_dir, exist_ok=True)
     
     # Save standard mean vector
-    standard_path = os.path.join(output_dir, "standard_mean_vector.npy")
-    np.save(standard_path, standard_vector)
-    print(f"Standard Mean steering vector saved to {standard_path}")
+    if standard_vector is not None:
+        standard_path = os.path.join(output_dir, "standard_mean_vector.npy")
+        np.save(standard_path, standard_vector)
+        print(f"Standard Mean steering vector saved to {standard_path}")
+    else:
+        print("Warning: Standard mean vector is None, skipping save.")
     
     # Save private mean vector
-    private_path = os.path.join(output_dir, "private_mean_vector.npy")
-    np.save(private_path, private_vector)
-    print(f"Private Mean steering vector saved to {private_path}")
+    if private_vector is not None:
+        private_path = os.path.join(output_dir, "private_mean_vector.npy")
+        np.save(private_path, private_vector)
+        print(f"Private Mean steering vector saved to {private_path}")
+    else:
+        print("Warning: Private mean vector is None, skipping save.")
 
 
 def purge_vram(model, tokenizer):
